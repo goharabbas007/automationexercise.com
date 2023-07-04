@@ -115,6 +115,12 @@ describe('Verify All products and Product detail page', () => {
         homeObj.productLink()
         detailObj.productDetail()
     })
+    it('View Category Products', () => {
+        productObj.viewCategory()
+    })
+    it('View brand products', () => {
+        productObj.viewBrand()
+    })
 })
 describe('Verify Search product', () => {
     beforeEach(() => {
