@@ -10,6 +10,9 @@ export class CartPage{
         cy.get(this.product_name).should('be.visible')
         cy.get(this.product_name2).should('be.visible')
     }
+    productAdded(){
+        cy.get(this.product_name).should('be.visible')
+    }
     proceedCheckout(){
         cy.get(this.proceed_checkout_btn).click()
     }

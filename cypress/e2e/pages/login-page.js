@@ -6,6 +6,7 @@ export class LoginPage{
     login_email = '[data-qa="login-email"]'
     login_password = '[data-qa="login-password"]'
     login_btn = '[data-qa="login-button"]'
+    incorrect_login_assert = '.login-form > form > p'
     
     signup(name, email){
         cy.get(this.name_field).type(name)
@@ -16,6 +17,5 @@ export class LoginPage{
         cy.get(this.login_email).type(email)
         cy.get(this.login_password).type(password)
         cy.get(this.login_btn).click()
-        cy.get('.login-form > form > p').should('be.visible') // incorrect login assertion
     }
 }

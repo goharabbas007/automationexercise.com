@@ -15,6 +15,8 @@ export class HomePage{
     cart_link = '.shop-menu > .nav > :nth-child(3) > a'
     delete_account_link = ':nth-child(5) > a'
     deletion_assert = '.col-sm-9 > :nth-child(2)'
+    addToCart_btn_recommended_item = '.active > :nth-child(1) > .product-image-wrapper > .single-products > .productinfo > .btn'
+    product_added_success = '.modal-content'
 
     signupLoginLink(){
         cy.get(this.signup_login_link).click()
@@ -48,5 +50,9 @@ export class HomePage{
     deleteAccount(){
         cy.get(this.delete_account_link).click()
         cy.get(this.deletion_assert).should('be.visible')
+    }
+    addToCartFromRecommendedItems(){
+        cy.get(this.addToCart_btn_recommended_item).click()
+        cy.get(this.product_added_success).should('be.visible')
     }
 }

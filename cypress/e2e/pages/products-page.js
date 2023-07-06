@@ -11,10 +11,16 @@ export class ProductsPage{
     sub_category = '#Women > .panel-body > ul > :nth-child(1) > a'
     title_assert = '.title'
     view_brand = '.brands-name > .nav > :nth-child(1) > a'
+    review_name = '#name'
+    review_email = '#email'
+    reivew_text = '#review'
+    submit_review_btn = '#button-review'
+    review_success = '.alert-success > span'
 
     searchProduct(searchValue){
         cy.get(this.search_field).type(searchValue)
         cy.get(this.search_btn).click()
+        cy.get(this.searched_product).should('be.visible')
     }
     // add two consecutive products in cart
     addTwoDiffProducts(){
@@ -40,5 +46,12 @@ export class ProductsPage{
     viewBrand(){
         cy.get(this.view_brand).click()
         cy.get(this.title_assert).should('have.text', 'Brand - Polo Products')
+    }
+    writeReview(){
+        cy.get(this.review_name).type('name')
+        cy.get(this.review_email).type('email@gmail.com')
+        cy.get(this.reivew_text).type('this is some review text')
+        cy.get(this.submit_review_btn).click()
+        cy.get(this.review_success).should('be.visible')
     }
 }
