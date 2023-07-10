@@ -17,6 +17,8 @@ export class HomePage{
     deletion_assert = '.col-sm-9 > :nth-child(2)'
     addToCart_btn_recommended_item = '.active > :nth-child(1) > .product-image-wrapper > .single-products > .productinfo > .btn'
     product_added_success = '.modal-content'
+    scroll_up_btn = '#scrollUp > .fa'
+    scroll_up_assert = '.active > :nth-child(1) > h2'
 
     signupLoginLink(){
         cy.get(this.signup_login_link).click()
@@ -54,5 +56,17 @@ export class HomePage{
     addToCartFromRecommendedItems(){
         cy.get(this.addToCart_btn_recommended_item).click()
         cy.get(this.product_added_success).should('be.visible')
+    }
+    bottomToTop(){
+        cy.scrollTo('bottom', { duration: 1000 })
+        cy.get(this.subscribe_field).should('be.visible')
+        cy.get(this.scroll_up_btn).click()
+        cy.get(this.scroll_up_assert).should('be.visible')
+    }
+    scrollWithoutBtn(){
+        cy.scrollTo('bottom', { duration: 1000 })
+        cy.get(this.subscribe_field).should('be.visible')
+        cy.scrollTo('top', { duration: 1000 })
+        cy.get(this.scroll_up_assert).should('be.visible')
     }
 }

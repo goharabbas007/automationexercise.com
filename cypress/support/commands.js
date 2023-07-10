@@ -14,7 +14,7 @@ Cypress.Commands.add('login', () => {
     cy.session('loginSession', () => {
         cy.visit('https://www.automationexercise.com/')
         cy.get('.shop-menu > .nav > :nth-child(4) > a').click()
-        cy.get('[data-qa="login-email"]').type('gohar.abbas@invozone.com')
+        cy.get('[data-qa="login-email"]').type('gohar123@invozone.com')
         cy.get('[data-qa="login-password"]').type('gohar123')
         cy.get('[data-qa="login-button"]').click()
         cy.get(':nth-child(10) > a').should('be.visible')
