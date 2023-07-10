@@ -29,6 +29,6 @@ export class PaymentPage{
         cy.readFile('/Users/goharabbas/Downloads/invoice.txt').should('exist')
     }
     clickContinueBtn(){
-        cy.get('[data-qa="continue-button"]')
+        cy.get('[data-qa="continue-button"]').click()
     }
 }

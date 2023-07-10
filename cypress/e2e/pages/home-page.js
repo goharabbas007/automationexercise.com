@@ -13,7 +13,7 @@ export class HomePage{
     subscribe_btn = '#subscribe'
     subscribe_success = '.alert-success'
     cart_link = '.shop-menu > .nav > :nth-child(3) > a'
-    delete_account_link = ':nth-child(5) > a'
+    delete_account_link = '.shop-menu > .nav > :nth-child(5) > a'
     deletion_assert = '.col-sm-9 > :nth-child(2)'
     addToCart_btn_recommended_item = '.active > :nth-child(1) > .product-image-wrapper > .single-products > .productinfo > .btn'
     product_added_success = '.modal-content'

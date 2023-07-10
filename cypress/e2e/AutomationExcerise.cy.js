@@ -6,9 +6,9 @@ import { SignupPage } from "./pages/signup-page"
 import { ContactPage } from "./pages/contact-page"
 import { ProductDetailPage } from "./pages/product-detail-page"
 import { ProductsPage } from "./pages/products-page"
-import { CartPage } from "./cart-page"
-import { CheckoutPage } from "./checkout"
-import { PaymentPage } from "./payment"
+import { CartPage } from "./pages/cart-page"
+import { CheckoutPage } from "./pages/checkout"
+import { PaymentPage } from "./pages/payment"
 
 // creating objects for each classes
 const homeObj = new HomePage()
@@ -30,7 +30,6 @@ describe('', () => {
         loginObj.signup('Gohar', 'gohar123@invozone.com')
         signupObj.accountInfo('gohar123', '12', 'January', '1997')
         signupObj.addressInfo('gohar', 'abbas', 'address1', 'Canada', 'Ontario', 'Torronto', '4400', '0900')
-        // homeObj.deleteAccount()
     })
     it('TC 5: Register User with existing email', ()=>{
         loginObj.signup('Gohar', 'gohar123@invozone.com')
@@ -52,7 +51,7 @@ describe('', () => {
         homeObj.deleteAccount()
     })
     it('TC 15: Place Order: Register before Checkout', () => {
-        loginObj.signup('Gohar', 'papu1@gmail.com')
+        loginObj.signup('Gohar', 'papu007@gmail.com')
         signupObj.accountInfo('gohar123', '12', 'January', '1997')
         signupObj.addressInfo('gohar', 'abbas', 'address1', 'Canada', 'Ontario', 'Torronto', '4400', '0900')
         homeObj.productLink()
@@ -225,6 +224,7 @@ describe('', () => {
         payObj.payAndConfirmOrder('gohar', '0900', '123', '12', '2026')
         payObj.downloadInvoice()
         payObj.clickContinueBtn()
+        homeObj.deleteAccount()
     })
 })
 describe('', () => {
